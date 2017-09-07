@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Login</title> 
+	        <link rel ="stylesheet" href="/csss/a.css" />
+		<link rel ="stylesheet" href="/csss/style.css" />
+		<link rel ="stylesheet" href="/csss/style.css" />
+        	<script src="/javas/a.js"></script>
+ 
+    </head>
+    <body>
+        <div class="main-container container-fluid">
+        <div class="row main">
+	       <div class="panel-heading">
+	               <div class="panel-title text-center">
+        		       	 
+	               	</div>
+	            </div>
+				<div class="main-login main-center">
+					<form class="form-horizontal" action='/scripts/login1.py' method='GET'>
+              <div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" placeholder ="Username" class="inputText" name='username'> </input>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+									<input type="password" placeholder="Password"class="inputText" name='password' ></input>
+								</div>
+							</div>
+						</div>
+						<div class="form-group ">
+							<button class="btn btn-primary btn-lg btn-block login-button" type="submit">Login</button>
+						</div>
+						<div class="login-register">
+				            		<a href='signup.html'>SignUp</a>
+				         	</div>
+					</form>
+				</div>
+			</div>
+		</div>
+    </body>
+</html>
