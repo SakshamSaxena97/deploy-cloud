@@ -8,7 +8,7 @@ print "content-type: text/html"
 menuCh=cgi.FormContent()['setup'][0]
 
 if menuCh == "staas":
-	print "location: ../mainstorage.html"
+	print "location: ../staas.html"
 	print
 
 elif menuCh == "iaas":
@@ -24,7 +24,7 @@ elif menuCh == "paas":
         print
 
 elif menuCh == "naas":
-        print "location: ../naas.html"
+        print "location: ../nas.html"
         print
 
 else:
