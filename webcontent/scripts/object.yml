@@ -1,0 +1,7 @@
+
+- hosts: raja
+  tasks:
+   - file:
+       path: "/media/raja"
+       state: directory
+
