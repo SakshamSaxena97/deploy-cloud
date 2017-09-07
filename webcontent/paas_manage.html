@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<title> MY CODE PLATFORM </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+<h3>Platform as a Service</h3>
+<div class="w3-container">
+  
+  <div class="w3-bar w3-black">
+    <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'C')">C</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'C++')">C++</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Java')">Java</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Python')">Python</button>
+  </div>
+  
+  <div id="C" class="w3-container w3-border city">
+    
+    <form action="scripts/cpaas1.py">
+	<textarea rows="10" cols="70" input='text' name='code'>#include<stdio.h></textarea>
+	<br>
+	<button name="button" type="submit">Run>></button>
+    </form>
+  </div>
+
+  
+  <div id="C++" class="w3-container w3-border city" style="display:none">
+        <form action="scripts/cpppaas1.py">
+	<textarea rows="10" cols="70" input='text' name='code'>#include <iostream>
+using namespace std;</textarea>
+	<br>
+	<button name="button" type="submit">Run>></button>
+    </form>
+  </div>
+  
+  <div id="Java" class="w3-container w3-border city" style="display:none">
+    
+    <form action="scripts/javapaas1.py">
+	<textarea rows="10" cols="70" input='text' name='code'>public class code {}</textarea>
+	<br>
+	<button name="button" type="submit">Run>></button>
+    </form>
+  </div>
+
+  
+  <div id="Python" class="w3-container w3-border city" style="display:none">
+    
+    <form action="scripts/pypaas1.py">
+	<textarea rows="10" cols="70" input='text' name='code'>#!/usr/bin/python</textarea>
+	<br>
+	<button name="button" type="submit">Run>></button>
+    </form>
+  </div>
+
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+</script>
+
+</body>
+</html>
