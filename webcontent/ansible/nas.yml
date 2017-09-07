@@ -1,0 +1,22 @@
+
+- hosts: mysystem
+  tasks:
+   - blockinfile: 
+       path: "/etc/ansible/hosts"
+       block: |
+             [jack]
+             192.168.43.164  ansible_ssh_user=root ansible_ssh_pass=redhat
+ 
+
+- hosts: jack
+  tasks:
+   - file:
+       path: "/etc/docker/jack-br2.jason"
+       state: touch
+       mode: 0644
+
+   - lineinfile: 
+       path: "/etc/docker/jack-br2.jason"
+       line: '"bridge" : "jack-br2.jason"'
+             
+          

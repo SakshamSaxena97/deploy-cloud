@@ -1,0 +1,25 @@
+
+- hosts: mysystem
+  tasks:
+   - blockinfile: 
+       path: "/etc/ansible/hosts"
+       block: |
+             [shv]
+             192.168.43.164  ansible_ssh_user=root ansible_ssh_pass=redhat
+ 
+
+- hosts: shv
+  tasks:
+   - open_iscsi:
+       login: no
+       target: "shv"  
+       
+- hosts: storage
+  tasks:
+   - service:
+       name: tgtd
+       state: stopped
+   - lvol: 
+       vg: myvg
+       lv: shv
+       state: absent       

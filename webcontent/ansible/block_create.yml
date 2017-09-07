@@ -1,0 +1,43 @@
+
+- hosts: storage
+  tasks:
+   - lvol:
+       vg: "myvg"
+       lv: "tom"
+       size: 1g 
+
+   - blockinfile: 
+       path: "/etc/tgt/targets.conf"
+       block: |
+           <target tom>
+            backing-store /dev/myvg/tom
+           </target> 
+
+   - service:
+       name: tgtd
+       state: restarted
+
+
+- hosts: mysystem
+  tasks:
+   - blockinfile: 
+       path: "/etc/ansible/hosts"
+       block: |
+             [tom]
+             192.168.43.130  ansible_ssh_user=root ansible_ssh_pass=redhat
+ 
+
+
+
+- hosts: tom
+  tasks:
+   - open_iscsi:
+       portal: 192.168.43.163
+       login: yes
+       discover: yes
+        
+
+
+
+
+
